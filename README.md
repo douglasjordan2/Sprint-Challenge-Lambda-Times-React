@@ -29,9 +29,21 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 ## Self-Study/Essay Questions
 
 - [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+
+Proptypes are a way for developers to avoid bugs before they happen. When data is passed from component to component, proptypes help ensure that the data being passed is the right type of data for the next component’s purpose.
+
+
 - [ ] Describe a life-cycle event in React?
+
+The React lifecycle comes in 3 parts, which are necessary for React to render the correct data at the correct time. It begins with Mounting, which is the “birth” of the component. The component is constructed, and gets its state derived from props passed to it, if any, and finally renders. The “growth” stage is the portion of the lifecycle where the component updates. It can accept new props, or its state can be updated (or an update can be forced); then the component calls its render method as a result. The last stage of the React lifecycle is the unmounting stage, where the component “dies”. At this point, the component is removed from the screen so its render method isn’t called. Render is the lifecycle method responsible for displaying the component to the user, and is the only method called across multiple stages (during mounting and updating).
+
 - [ ] Explain the details of a Higher Order Component?
+
+A Higher Order Component is a function that receives a component as an argument, and returns a new component source. This is beneficial when two components share data beyond the standard props/state pattern, for example, in a situation where a user needs to be authenticated before viewing content. An HOC can check the authentication and return the content or login page components, if the user is confirmed.
+
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+
+The 3 ways of styling components in React are Inline Styles, external CSS, or with a library such as Reactstrap. Using an external stylesheet is beneficial because of its familiarity, and the ability to use preprocessors. Inline styles are beneficial, because they're right within the React file you're using. Also, you can set styles to a function that can conditionally return different styles. Libraries are beneficial because they provide an easier way to achieve certain styling choices. In the case of styled-components, the ability to use CSS syntax and nesting combines the best parts of all the ways to style components.
 
 ## Project Setup
 
