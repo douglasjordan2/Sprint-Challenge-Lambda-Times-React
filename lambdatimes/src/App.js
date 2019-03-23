@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
-import TopBar from './components/TopBar';
-import Header from './components/Header';
-import Content from './components/Content/Content';
+import withAuth from './components/authentication/withAuth';
+import Times from './components/Content/Times';
+import Login from './components/Login';
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: 'PT Sans', sans-serif;
-`;
+const fromWithAuth = withAuth(Times);
+const RenderPage = fromWithAuth(Login);
 
 const App = () => {
   return (
-    <Container>
-      <TopBar />
-      <Header />
-      <Content />
-    </Container>
+    <RenderPage />
   );
 }
 
