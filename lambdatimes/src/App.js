@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import TopBar from './components/TopBar';
-import Header from './components/Header';
-import Content from './components/Content/Content';
+import withAuth from './components/authentication/withAuth';
+import Times from './components/Content/Times';
+import Login from './components/Login';
+
+const fromWithAuth = withAuth(Times);
+const RenderPage = fromWithAuth(Login);
 
 const App = () => {
   return (
-    <div className="App">
-      <TopBar />
-      <Header />
-      <Content />
-    </div>
+    <RenderPage />
   );
 }
 
